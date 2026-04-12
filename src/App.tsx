@@ -56,7 +56,7 @@ const Navbar = () => {
             </a>
           ))}
           <a 
-            href="https://wa.me/573152684203" 
+            href="https://wa.me/573152684203?text=Hola%20Elizabeth%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20para%20planear%20el%20evento%20de%20mis%20sue%C3%B1os." 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-primary text-white px-6 py-2.5 rounded-md editorial-caps hover:bg-primary/90 transition-all text-center"
@@ -91,7 +91,7 @@ const Navbar = () => {
               </a>
             ))}
             <a 
-              href="https://wa.me/573152684203" 
+              href="https://wa.me/573152684203?text=Hola%20Elizabeth%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20para%20planear%20el%20evento%20de%20mis%20sue%C3%B1os." 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-primary text-white w-full py-4 rounded-md editorial-caps text-center"
@@ -135,7 +135,7 @@ const Hero = () => (
         </p>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
           <a 
-            href="https://wa.me/573152684203" 
+            href="https://wa.me/573152684203?text=Hola%20Elizabeth%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20para%20planear%20el%20evento%20de%20mis%20sue%C3%B1os." 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-md hover:bg-primary/90 transition-colors editorial-caps shadow-lg shadow-primary/10 text-center"
@@ -425,7 +425,7 @@ const Footer = () => (
       <div>
         <h6 className="editorial-caps text-on-surface mb-6 md:mb-8">Explora</h6>
         <ul className="space-y-3 md:space-y-4">
-          <li><a href="https://wa.me/573152684203" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors text-xs md:text-sm">WhatsApp</a></li>
+          <li><a href="https://wa.me/573152684203?text=Hola%20Elizabeth%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20para%20planear%20el%20evento%20de%20mis%20sue%C3%B1os." target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors text-xs md:text-sm">WhatsApp</a></li>
           <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-xs md:text-sm">Instagram</a></li>
           <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-xs md:text-sm">Pinterest</a></li>
         </ul>
@@ -568,7 +568,7 @@ export default function App() {
                     <p className="text-on-surface-variant text-xs md:text-sm">Bucaramanga, Santander</p>
                   </div>
                 </div>
-                <a href="https://wa.me/573152684203" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 md:gap-6 group bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/10 hover:border-primary/50 transition-colors">
+                <a href="https://wa.me/573152684203?text=Hola%20Elizabeth%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20para%20planear%20el%20evento%20de%20mis%20sue%C3%B1os." target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 md:gap-6 group bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/10 hover:border-primary/50 transition-colors">
                   <MessageSquare className="w-6 h-6 md:w-8 md:h-8 text-secondary group-hover:scale-110 transition-transform" />
                   <div>
                     <h6 className="font-bold text-sm md:text-base">Consultas Rápidas</h6>
