@@ -206,12 +206,14 @@ const AIAssistant = () => {
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
   const [mode, setMode] = useState<'concept' | 'trends'>('concept');
+  const [error, setError] = useState<string | null>(null);
 
   const handleGenerate = async () => {
     if (!prompt && mode === 'concept') return;
     setLoading(true);
     setResult(null);
     setGeneratedImage(null);
+    setError(null);
     try {
       const output = mode === 'concept' 
         ? await generateEventConcept(prompt)
@@ -225,8 +227,9 @@ const AIAssistant = () => {
         setGeneratedImage(img);
         setImageLoading(false);
       }
-    } catch (error) {
-      console.error(error);
+    } catch (err: any) {
+      console.error(err);
+      setError("Lo sentimos, no pudimos conectar con la IA en este momento. Por favor verifica tu conexión o intenta más tarde.");
     } finally {
       setLoading(false);
     }
@@ -286,6 +289,16 @@ const AIAssistant = () => {
                 Ver Tendencias Clave
               </button>
             </div>
+          )}
+
+          {error && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mt-6 p-4 bg-red-50 text-red-600 text-sm rounded-xl text-center border border-red-100"
+            >
+              {error}
+            </motion.div>
           )}
 
           <AnimatePresence>

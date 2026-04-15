@@ -1,6 +1,12 @@
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+const API_KEY = process.env.GEMINI_API_KEY || "";
+
+if (!API_KEY) {
+  console.warn("⚠️ GEMINI_API_KEY no detectada. Asegúrate de configurarla en tus variables de entorno.");
+}
+
+const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 export async function generateEventConcept(prompt: string) {
   const systemInstruction = `Eres un experto planificador de eventos de lujo para Elizabeth Elles. 
@@ -17,16 +23,21 @@ export async function generateEventConcept(prompt: string) {
     "imagePrompt": "Un prompt en inglés detallado para generar una imagen fotorrealista de este concepto de evento de lujo."
   }`;
 
-  const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
-    contents: prompt,
-    config: {
-      systemInstruction,
-      responseMimeType: "application/json"
-    }
-  });
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-3-flash", // Actualizado a versión estable
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
+      config: {
+        systemInstruction,
+        responseMimeType: "application/json"
+      }
+    });
 
-  return JSON.parse(response.text || "{}");
+    return JSON.parse(response.text || "{}");
+  } catch (error) {
+    console.error("Error en generateEventConcept:", error);
+    throw error;
+  }
 }
 
 export async function searchTrendingThemes(location: string = "Bucaramanga") {
@@ -43,34 +54,47 @@ export async function searchTrendingThemes(location: string = "Bucaramanga") {
     "imagePrompt": "Un prompt en inglés detallado para generar una imagen fotorrealista de esta tendencia de evento en Bucaramanga."
   }`;
 
-  const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
-    contents: `Tendencias en ${location}`,
-    config: {
-      systemInstruction,
-      responseMimeType: "application/json"
-    }
-  });
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-3-flash", // Actualizado a versión estable
+      contents: [{ role: "user", parts: [{ text: `Tendencias en ${location}` }] }],
+      config: {
+        systemInstruction,
+        responseMimeType: "application/json"
+      }
+    });
 
-  return JSON.parse(response.text || "{}");
+    return JSON.parse(response.text || "{}");
+  } catch (error) {
+    console.error("Error en searchTrendingThemes:", error);
+    throw error;
+  }
 }
 
 export async function generateConceptImage(prompt: string) {
-  const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash-image',
-    contents: [{ text: prompt }],
-    config: {
-      imageConfig: {
-        aspectRatio: "16:9",
-        imageSize: "1K"
+  try {
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.5-flash-image', // Este modelo sigue siendo válido para generación de imágenes
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
+      config: {
+        imageConfig: {
+          aspectRatio: "16:9",
+          imageSize: "1K"
+        }
+      }
+    });
+
+    const candidates = response.candidates || [];
+    if (candidates.length > 0 && candidates[0].content?.parts) {
+      for (const part of candidates[0].content.parts) {
+        if (part.inlineData) {
+          return `data:image/png;base64,${part.inlineData.data}`;
+        }
       }
     }
-  });
-
-  for (const part of response.candidates[0].content.parts) {
-    if (part.inlineData) {
-      return `data:image/png;base64,${part.inlineData.data}`;
-    }
+    return null;
+  } catch (error) {
+    console.error("Error en generateConceptImage:", error);
+    return null;
   }
-  return null;
 }
