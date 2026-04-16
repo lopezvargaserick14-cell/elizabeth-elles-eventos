@@ -24,7 +24,7 @@ export async function generateEventConcept(prompt: string) {
     if (!API_KEY) throw new Error("API key is missing");
 
     const response = await ai.models.generateContent({
-      model: "gemini-1.5-flash", // Modelo ultra-estable y rápido
+      model: "gemini-2.5-flash", // Modelo ultra-estable y rápido
       contents: [{ role: "user", parts: [{ text: prompt }] }],
       config: {
         systemInstruction,
@@ -57,7 +57,7 @@ export async function searchTrendingThemes(location: string = "Bucaramanga") {
     if (!API_KEY) throw new Error("API key is missing");
 
     const response = await ai.models.generateContent({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.5-flash",
       contents: [{ role: "user", parts: [{ text: `Tendencias en ${location}` }] }],
       config: {
         systemInstruction,
@@ -77,7 +77,7 @@ export async function generateConceptImage(prompt: string) {
     if (!API_KEY) throw new Error("API key is missing");
 
     const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash', // Usamos flash para la descripción de imagen si el otro falla
+      model: 'gemini-2.5-flash-image', // Usamos el modelo especializado para imágenes
       contents: [{ role: "user", parts: [{ text: prompt }] }],
       config: {
         imageConfig: {
