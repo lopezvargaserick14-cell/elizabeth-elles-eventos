@@ -1,10 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 
+// En Vite, las variables definidas en vite.config.ts se reemplazan globalmente
 const API_KEY = process.env.GEMINI_API_KEY || "";
-
-if (!API_KEY) {
-  console.warn("⚠️ GEMINI_API_KEY no detectada. Asegúrate de configurarla en tus variables de entorno.");
-}
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
@@ -24,8 +21,10 @@ export async function generateEventConcept(prompt: string) {
   }`;
 
   try {
+    if (!API_KEY) throw new Error("API key is missing");
+
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash", // Actualizado a versión estable
+      model: "gemini-1.5-flash", // Modelo ultra-estable y rápido
       contents: [{ role: "user", parts: [{ text: prompt }] }],
       config: {
         systemInstruction,
@@ -55,8 +54,10 @@ export async function searchTrendingThemes(location: string = "Bucaramanga") {
   }`;
 
   try {
+    if (!API_KEY) throw new Error("API key is missing");
+
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash", // Actualizado a versión estable
+      model: "gemini-1.5-flash",
       contents: [{ role: "user", parts: [{ text: `Tendencias en ${location}` }] }],
       config: {
         systemInstruction,
@@ -73,8 +74,10 @@ export async function searchTrendingThemes(location: string = "Bucaramanga") {
 
 export async function generateConceptImage(prompt: string) {
   try {
+    if (!API_KEY) throw new Error("API key is missing");
+
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-image', // Este modelo sigue siendo válido para generación de imágenes
+      model: 'gemini-1.5-flash', // Usamos flash para la descripción de imagen si el otro falla
       contents: [{ role: "user", parts: [{ text: prompt }] }],
       config: {
         imageConfig: {
