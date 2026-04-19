@@ -164,8 +164,7 @@ const About = () => (
           <img 
             alt="Elizabeth Elles Portrait" 
             className="w-full h-full object-cover" 
-            src="https://lh3.googleusercontent.com/aida/ADBb0ujnujNrPMoarEPxpZULi7_So8mjSH8VNYcubVcrnm-fjjFNb2820ACR_93VhM9vb7YA2wqQxPGM16T9rtR_inR_Or9R37_srIzhTfOEJ1cjFppl77gBFOQG0z1J_MK5KpEd2jjposKU_6TDfam8uyCeekqiBCBp_o-ar16Zr8YdVo2hezjhGe6x8iafG3H0CIpslbuZHrwzOt3cdwKrXvBU1KrM7cU_vbNBt31lT9t9_QszCui0WbNGwik3aN_3kKRsTKkMQRgA-_4"
-            referrerPolicy="no-referrer"
+            src="/1foto.jpg"
           />
         </div>
         <div className="absolute -bottom-12 -right-12 bg-surface-container-lowest p-12 max-w-xs ambient-glow hidden lg:block">
@@ -386,12 +385,12 @@ const Services = () => (
           {
             title: "Bodas de Ensueño",
             desc: "Planificación integral y coordinación del gran día con atención a cada detalle.",
-            img: "/bodas_ensueno_new.jpg"
+            img: "/bodas_ensueno_final.jpeg"
           },
           {
             title: "Eventos con Estilo",
             desc: "Curaduría visual y estilismo que refleja tu esencia personal.",
-            img: "/eventos_estilo.jpg"
+            img: "/eventos_estilo_final.jpeg"
           },
           {
             title: "Eventos de Destino",
@@ -418,7 +417,6 @@ const Services = () => (
             </div>
             <h4 className="font-headline text-2xl italic mb-2">{service.title}</h4>
             <p className="text-on-surface-variant text-sm mb-4">{service.desc}</p>
-            <span className="text-secondary editorial-caps text-[10px] font-bold border-b border-secondary/20 pb-1">Ver Detalles</span>
           </motion.div>
         ))}
       </div>
@@ -504,31 +502,36 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <h3 className="font-headline text-3xl md:text-5xl italic mb-12 md:mb-16 text-center">Galería de Memorias</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[200px] md:auto-rows-[300px]">
-              <div className="col-span-2 row-span-2 group relative overflow-hidden rounded-lg">
-                <img 
-                  alt="Main Event" 
-                  className="w-full h-full object-cover" 
-                  src="https://lh3.googleusercontent.com/aida/ADBb0uhwLET3Rc4CfTRcDvjjZIkU35HXHAw3hSGaCX6FzGlAn37C42grItuHKy2YuOk9ukxSkIKQ6ABQzWcI3E4yFZChzxmcidGZYeX1Zq5333zV0Q-svyMz_khZmjX0-4dSv1Wl-mBukfWqOMSECAbWCVEB9lVvMLF5loJpuGyCL4bk8pv4Rny-Xz4uhQvU6XhFRwyd_FUvvE0AvlWpHu3Ovi5NH_AAT0HniESUStbroVAFaOPPKI3ZBJkSfJh2MLMmlgO6q_Yiv0SiYf0"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-on-surface/40 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="editorial-caps text-white font-bold">Atmósfera Única</span>
-                </div>
-              </div>
               {[
-                "https://lh3.googleusercontent.com/aida/ADBb0ugQ42iV3R8XafIU334Nhm8KZIFa5uukfuNf7tIMs_6o6t4e9cdE2Stpn9FdCZQeB13bswoe6BY0BYoziwEClhoE8U00iBw2SScJ53Sg9uGMpJEEeXsf4ef3mjgDSN4J7sOPXqUVDXGjppotBcYdoX61GHQA_RW03uGtnhUmiWfMq5SuRHVTNirI8lFpVqunc8ONHJzB_MnS-ZXE_iBpTEM6OBiNiyTxtPSf-zuSkbt8St3YWUpTGa3CrEKvXoKWOxbtsiDhgWC3tQ",
-                "https://lh3.googleusercontent.com/aida/ADBb0uh1y2rdP380r2kiqGrGZmNOPBk2jhMtNOGIscm2b_g0czX2s_yP0iHjYcUbzTsysyHH6hmOpv2Zrs26hVSwq7u5qLo-b8h6Q2KohJlLmkkqjqxGfNYAvbhKrV74F71ssbVzNQzr23nPWqPVMAqB_AplANZTJRh8dESg2iS7tZDUy7cGsT05XozGNKfc7zIhmGbMC-ksQr9BklNQlgJXEilf7eTXuIy4E7_Drzxf1fa_Ejp_JrSCY-6TyZCc46azQGT1YfxgVrxXLg",
-                "https://lh3.googleusercontent.com/aida/ADBb0ujJ3rGI93tje6LV9jmXFcobXGmdJwfg13ZrtSe-E6v0Iq7NjUbRxJRH4l8WIuCZG-IXIYvRdQNWw5kl6X8Dvv96QtUm-YKbs_2tl_WD92mP9ATjeHGUR0vyASGra36757OxqKYYrt7siGC2i1njWFEFtJ_tpd3QcjAV0JV_0HpTiS4hqrKZCnJwwm0ATsnmU6iQEdeigMNKBhqaicqx7SL3JFLUe4vMPyfZToizcKrl99AFAbGYzgZhuA_cCNnrE8YtRuhqM6kFvQU",
-                "https://lh3.googleusercontent.com/aida/ADBb0ugDg0z0bEP3ptOm1chzlofVTbC1oINERKeGL08xvfeg5VK_8tD76GJgMJZz1kYtaFYsEbLJsVecgayI1RrSm0ncIligbZjhx29luc-G1Jqt-6F2hTolo26HCSyxH7-QmhJnNRgg4_P83_PyBman8WSZaRX1HW3knKsVvnryjDUtTBc33hhHqKHoFgrugsHGrNZcnGO8L96N8zISTsv_MK5nchK2ChPkgG4jc-b_1LinIt_C-TLwQoMFjPnVZM4_WeVboN5gO54nIus"
-              ].map((img, i) => (
-                <div key={i} className="group relative overflow-hidden rounded-lg">
+                { src: "/foto23.jpeg", span: "col-span-2 row-span-2" },
+                { src: "/foto3.jpeg", span: "col-span-1 row-span-1" },
+                { src: "/foto4.jpeg", span: "col-span-1 row-span-1" },
+                { src: "/foto5.jpeg", span: "col-span-1 row-span-2" },
+                { src: "/foto6.jpeg", span: "col-span-1 row-span-1" },
+                { src: "/foto7.jpeg", span: "col-span-2 row-span-1" },
+                { src: "/foto8.jpeg", span: "col-span-1 row-span-1" },
+                { src: "/foto9.jpeg", span: "col-span-1 row-span-1" },
+                { src: "/foto10.jpeg", span: "col-span-2 row-span-1" },
+              ].map((item, i) => (
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className={`group relative overflow-hidden rounded-lg ${item.span}`}
+                >
                   <img 
-                    alt={`Gallery ${i}`} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                    src={img}
-                    referrerPolicy="no-referrer"
+                    alt={`Momento memorable ${i}`} 
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110" 
+                    src={item.src}
                   />
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <span className="text-white editorial-caps text-xs tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      Amor & Elegancia
+                    </span>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
