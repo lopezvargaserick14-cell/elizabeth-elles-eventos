@@ -113,6 +113,7 @@ const Hero = () => (
         muted 
         loop 
         playsInline 
+        poster="/1foto.jpg"
         className="w-full h-full object-cover"
       >
         <source src="/Weddingaltared.mp4" type="video/mp4" />
@@ -126,7 +127,6 @@ const Hero = () => (
         transition={{ duration: 0.8 }}
         className="max-w-2xl"
       >
-        <span className="editorial-caps text-secondary mb-4 block">Bucaramanga, Santander</span>
         <h1 className="font-headline text-4xl sm:text-6xl md:text-8xl italic tracking-tight text-on-surface leading-[1.1] mb-8">
           Planificación de <br className="hidden sm:block" /> Eventos Exclusivos
         </h1>
@@ -411,6 +411,7 @@ const Services = () => (
                 alt={service.title} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 src={service.img}
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -525,6 +526,7 @@ export default function App() {
                     alt={`Momento memorable ${i}`} 
                     className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110" 
                     src={item.src}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                     <span className="text-white editorial-caps text-xs tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
