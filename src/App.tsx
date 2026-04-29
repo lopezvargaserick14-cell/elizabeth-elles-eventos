@@ -128,7 +128,7 @@ const Hero = () => (
         className="max-w-2xl"
       >
         <h1 className="font-headline text-4xl sm:text-6xl md:text-8xl italic tracking-tight text-on-surface leading-[1.1] mb-8">
-          Planificación de <br className="hidden sm:block" /> Eventos Exclusivos
+          Elizabeth Elles <br className="hidden sm:block" /> Eventos Exclusivos
         </h1>
         <p className="text-lg md:text-xl text-on-surface-variant max-w-lg mb-12">
           Cada momento merece ser perfecto. Creamos experiencias que trascienden el tiempo con elegancia y sofisticación.
