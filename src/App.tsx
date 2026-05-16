@@ -389,7 +389,7 @@ const Services = () => (
           },
           {
             title: "Eventos con Estilo",
-            desc: "Curaduría visual y estilismo que refleja tu esencia personal.",
+            desc: "Gestión visual y estilismo que refleja tu esencia personal.",
             img: "/eventos_estilo_final.jpeg"
           },
           {
@@ -475,7 +475,7 @@ export default function App() {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
               {[
                 { step: "01", title: "Descubrimiento", desc: "Escuchamos tus deseos más profundos para sentar las bases de tu celebración única." },
-                { step: "02", title: "Curaduría", desc: "Seleccionamos a los mejores aliados y diseñamos cada detalle visual y logístico." },
+                { step: "02", title: "Gestión", desc: "Seleccionamos a los mejores aliados y diseñamos cada detalle visual y logístico." },
                 { step: "03", title: "Ejecución", desc: "Nuestro equipo gestiona cada segundo del evento para que vivas el presente." },
               ].map((item, i) => (
                 <motion.div 
